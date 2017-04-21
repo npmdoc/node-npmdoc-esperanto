@@ -1,0 +1,340 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >esperanto (v0.7.6)</a>
+</h1>
+<h4>An easier way to convert ES6 modules to AMD and CommonJS</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.esperanto">module esperanto</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.esperanto.bundle">
+            function <span class="apidocSignatureSpan">esperanto.</span>bundle
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.esperanto.toAmd">
+            function <span class="apidocSignatureSpan">esperanto.</span>toAmd
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.esperanto.toCjs">
+            function <span class="apidocSignatureSpan">esperanto.</span>toCjs
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.esperanto.toUmd">
+            function <span class="apidocSignatureSpan">esperanto.</span>toUmd
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.esperanto" id="apidoc.module.esperanto">module esperanto</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.esperanto.bundle" id="apidoc.element.esperanto.bundle">
+        function <span class="apidocSignatureSpan">esperanto.</span>bundle
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bundle(options) {
+	if (!alreadyWarned.bundle) {
+		console.error(deprecateMessages.bundle);
+		alreadyWarned.bundle = true;
+	}
+
+	return getBundle(options).then(function (bundle) {
+		return {
+			imports: bundle.externalModules.map(function (mod) {
+				return mod.id;
+			}),
+			exports: flattenExports(bundle.entryModule.exports),
+
+			toAmd: function (options) {
+				return transpile(&#x27;amd&#x27;, options);
+			},
+			toCjs: function (options) {
+				return transpile(&#x27;cjs&#x27;, options);
+			},
+			toUmd: function (options) {
+				return transpile(&#x27;umd&#x27;, options);
+			},
+
+			concat: function (options) {
+				return concat(bundle, options || {});
+			}
+		};
+
+		function transpile(format) {
+			var options = arguments.length &#x3c;= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+			if (&#x27;defaultOnly&#x27; in options &#x26;&#x26; !alreadyWarned.defaultOnly) {
+				// TODO link to a wiki page explaining this, or something
+				console.error(deprecateMessages.defaultOnly);
+				alreadyWarned.defaultOnly = true;
+			}
+
+			var builder = undefined;
+
+			if (!options.strict) {
+				// ensure there are no named imports/exports
+				if (hasNamedExports(bundle.entryModule)) {
+					throw new Error(&#x27;Entry module can only have named exports in strict mode (pass `strict: true`)&#x27;);
+				}
+
+				bundle.modules.forEach(function (mod) {
+					mod.imports.forEach(function (x) {
+						if (x.module.isExternal &#x26;&#x26; !x.isDefault &#x26;&#x26; !x.isBatch) {
+							throw new Error(&#x27;You can only have named external imports in strict mode (pass `strict: true`)&#x27;);
+						}
+					});
+				});
+
+				builder = bundleBuilders.defaultsMode[format];
+			} else {
+				builder = bundleBuilders.strictMode[format];
+			}
+
+			return builder(bundle, options);
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		file = path.resolve( options.input ).replace( bundleOptions.base + &#x27;/&#x27;, &#x27;&#x27; );
+	} else {
+		file = path.resolve( bundleOptions.base, options.input );
+	}
+
+	bundleOptions.entry = file;
+
+	return esperanto.<span class="apidocCodeKeywordSpan">bundle</span>( bundleOptions ).then( function ( bundle ) {
+		var transpiled, promises;
+
+		transpiled = bundle[ method ]({
+			name: options.name,
+			amdName: options.amdName,
+			strict: options.strict,
+			sourceMap: options.sourcemap,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.esperanto.toAmd" id="apidoc.element.esperanto.toAmd">
+        function <span class="apidocSignatureSpan">esperanto.</span>toAmd
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toAmd = function (source) {
+		var options = arguments.length &#x3c;= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+		var mod = getStandaloneModule({
+			source: source,
+			getModuleName: options.getModuleName,
+			strict: options.strict
+		});
+
+		if (&#x27;defaultOnly&#x27; in options &#x26;&#x26; !alreadyWarned.defaultOnly) {
+			// TODO link to a wiki page explaining this, or something
+			console.error(deprecateMessages.defaultOnly);
+			alreadyWarned.defaultOnly = true;
+		}
+
+		if (options.absolutePaths &#x26;&#x26; !options.amdName) {
+			throw new Error(&#x27;You must specify an `amdName` in order to use the `absolutePaths` option&#x27;);
+		}
+
+		var builder = undefined;
+
+		if (!options.strict) {
+			// ensure there are no named imports/exports. TODO link to a wiki page...
+			if (hasNamedImports(mod) || hasNamedExports(mod)) {
+				throw new Error(&#x27;You must be in strict mode (pass `strict: true`) to use named imports or exports&#x27;);
+			}
+
+			builder = moduleBuilders.defaultsMode[format];
+		} else {
+			builder = moduleBuilders.strictMode[format];
+		}
+
+		return builder(mod, options);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.esperanto.toCjs" id="apidoc.element.esperanto.toCjs">
+        function <span class="apidocSignatureSpan">esperanto.</span>toCjs
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toCjs = function (source) {
+		var options = arguments.length &#x3c;= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+		var mod = getStandaloneModule({
+			source: source,
+			getModuleName: options.getModuleName,
+			strict: options.strict
+		});
+
+		if (&#x27;defaultOnly&#x27; in options &#x26;&#x26; !alreadyWarned.defaultOnly) {
+			// TODO link to a wiki page explaining this, or something
+			console.error(deprecateMessages.defaultOnly);
+			alreadyWarned.defaultOnly = true;
+		}
+
+		if (options.absolutePaths &#x26;&#x26; !options.amdName) {
+			throw new Error(&#x27;You must specify an `amdName` in order to use the `absolutePaths` option&#x27;);
+		}
+
+		var builder = undefined;
+
+		if (!options.strict) {
+			// ensure there are no named imports/exports. TODO link to a wiki page...
+			if (hasNamedImports(mod) || hasNamedExports(mod)) {
+				throw new Error(&#x27;You must be in strict mode (pass `strict: true`) to use named imports or exports&#x27;);
+			}
+
+			builder = moduleBuilders.defaultsMode[format];
+		} else {
+			builder = moduleBuilders.strictMode[format];
+		}
+
+		return builder(mod, options);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.esperanto.toUmd" id="apidoc.element.esperanto.toUmd">
+        function <span class="apidocSignatureSpan">esperanto.</span>toUmd
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toUmd = function (source) {
+		var options = arguments.length &#x3c;= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+		var mod = getStandaloneModule({
+			source: source,
+			getModuleName: options.getModuleName,
+			strict: options.strict
+		});
+
+		if (&#x27;defaultOnly&#x27; in options &#x26;&#x26; !alreadyWarned.defaultOnly) {
+			// TODO link to a wiki page explaining this, or something
+			console.error(deprecateMessages.defaultOnly);
+			alreadyWarned.defaultOnly = true;
+		}
+
+		if (options.absolutePaths &#x26;&#x26; !options.amdName) {
+			throw new Error(&#x27;You must specify an `amdName` in order to use the `absolutePaths` option&#x27;);
+		}
+
+		var builder = undefined;
+
+		if (!options.strict) {
+			// ensure there are no named imports/exports. TODO link to a wiki page...
+			if (hasNamedImports(mod) || hasNamedExports(mod)) {
+				throw new Error(&#x27;You must be in strict mode (pass `strict: true`) to use named imports or exports&#x27;);
+			}
+
+			builder = moduleBuilders.defaultsMode[format];
+		} else {
+			builder = moduleBuilders.strictMode[format];
+		}
+
+		return builder(mod, options);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

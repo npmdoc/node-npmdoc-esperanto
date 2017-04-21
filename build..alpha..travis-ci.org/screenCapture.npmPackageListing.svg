@@ -1,0 +1,91 @@
+<svg height="1406" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="1406" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-21 11:36:47 +0000   566051 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-21 11:36:47 +0000    13823 bytes  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-21 11:36:47 +0000     1036 bytes  bin/handleError.js</tspan>
+<tspan x="10" y="74">  3.  2017-04-21 11:36:47 +0000     1260 bytes  bin/help.md</tspan>
+<tspan x="10" y="90">  4.  2017-04-21 11:36:47 +0000      578 bytes  bin/index.js</tspan>
+<tspan x="10" y="106">  5.  2017-04-21 11:36:47 +0000     4493 bytes  bin/runEsperanto.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-21 11:36:47 +0000      337 bytes  bin/showHelp.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-21 11:36:47 +0000    73255 bytes  dist/esperanto.browser.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-21 11:36:47 +0000   155894 bytes  dist/esperanto.browser.js.map</tspan>
+<tspan x="10" y="170">  9.  2017-04-21 11:36:47 +0000    78032 bytes  dist/esperanto.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-21 11:36:47 +0000   154026 bytes  dist/esperanto.js.map</tspan>
+<tspan x="10" y="202"> 11.  2017-04-21 11:36:47 +0000     1054 bytes  package.json</tspan>
+<tspan x="10" y="218"> 12.  2017-04-21 11:36:47 +0000      102 bytes  src/banner.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-21 11:36:47 +0000      956 bytes  src/bundler/builders/concat.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-21 11:36:47 +0000      629 bytes  src/bundler/builders/defaultsMode/amd.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-21 11:36:47 +0000      655 bytes  src/bundler/builders/defaultsMode/cjs.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-21 11:36:47 +0000      128 bytes  src/bundler/builders/defaultsMode/index.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-21 11:36:47 +0000      749 bytes  src/bundler/builders/defaultsMode/umd.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-21 11:36:47 +0000      199 bytes  src/bundler/builders/index.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-21 11:36:47 +0000     1319 bytes  src/bundler/builders/strictMode/amd.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-21 11:36:47 +0000      888 bytes  src/bundler/builders/strictMode/cjs.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-21 11:36:47 +0000      128 bytes  src/bundler/builders/strictMode/index.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-21 11:36:47 +0000      947 bytes  src/bundler/builders/strictMode/umd.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-21 11:36:47 +0000      144 bytes  src/bundler/builders/strictMode/utils/getExportB\</tspan>
+<tspan x="10" y="410">lock.js</tspan>
+<tspan x="10" y="426"> 24.  2017-04-21 11:36:47 +0000      287 bytes  src/bundler/combine/getRenamedImports.js</tspan>
+<tspan x="10" y="442"> 25.  2017-04-21 11:36:47 +0000     1437 bytes  src/bundler/combine/index.js</tspan>
+<tspan x="10" y="458"> 26.  2017-04-21 11:36:47 +0000      400 bytes  src/bundler/combine/populateExternalModuleImport\</tspan>
+<tspan x="10" y="474">s.js</tspan>
+<tspan x="10" y="490"> 27.  2017-04-21 11:36:47 +0000     3130 bytes  src/bundler/combine/populateIdentifierReplacemen\</tspan>
+<tspan x="10" y="506">ts.js</tspan>
+<tspan x="10" y="522"> 28.  2017-04-21 11:36:47 +0000     2182 bytes  src/bundler/combine/populateModuleNames.js</tspan>
+<tspan x="10" y="538"> 29.  2017-04-21 11:36:47 +0000      708 bytes  src/bundler/combine/resolveExports.js</tspan>
+<tspan x="10" y="554"> 30.  2017-04-21 11:36:47 +0000     1023 bytes  src/bundler/combine/topLevelScopeConflicts.js</tspan>
+<tspan x="10" y="570"> 31.  2017-04-21 11:36:47 +0000     3589 bytes  src/bundler/combine/transformBody.js</tspan>
+<tspan x="10" y="586"> 32.  2017-04-21 11:36:47 +0000     5513 bytes  src/bundler/getBundle.js</tspan>
+<tspan x="10" y="602"> 33.  2017-04-21 11:36:47 +0000     3199 bytes  src/bundler/getModule.js</tspan>
+<tspan x="10" y="618"> 34.  2017-04-21 11:36:47 +0000     2132 bytes  src/bundler/utils/resolveChains.js</tspan>
+<tspan x="10" y="634"> 35.  2017-04-21 11:36:47 +0000     3063 bytes  src/bundler/utils/sortModules.js</tspan>
+<tspan x="10" y="650"> 36.  2017-04-21 11:36:47 +0000     4270 bytes  src/esperanto.js</tspan>
+<tspan x="10" y="666"> 37.  2017-04-21 11:36:47 +0000      702 bytes  src/standalone/builders/defaultsMode/amd.js</tspan>
+<tspan x="10" y="682"> 38.  2017-04-21 11:36:47 +0000     1144 bytes  src/standalone/builders/defaultsMode/cjs.js</tspan>
+<tspan x="10" y="698"> 39.  2017-04-21 11:36:47 +0000      128 bytes  src/standalone/builders/defaultsMode/index.js</tspan>
+<tspan x="10" y="714"> 40.  2017-04-21 11:36:47 +0000      818 bytes  src/standalone/builders/defaultsMode/umd.js</tspan>
+<tspan x="10" y="730"> 41.  2017-04-21 11:36:47 +0000     1167 bytes  src/standalone/builders/defaultsMode/utils/trans\</tspan>
+<tspan x="10" y="746">formExportDeclaration.js</tspan>
+<tspan x="10" y="762"> 42.  2017-04-21 11:36:47 +0000      199 bytes  src/standalone/builders/index.js</tspan>
+<tspan x="10" y="778"> 43.  2017-04-21 11:36:47 +0000      627 bytes  src/standalone/builders/strictMode/amd.js</tspan>
+<tspan x="10" y="794"> 44.  2017-04-21 11:36:47 +0000      816 bytes  src/standalone/builders/strictMode/cjs.js</tspan>
+<tspan x="10" y="810"> 45.  2017-04-21 11:36:47 +0000      128 bytes  src/standalone/builders/strictMode/index.js</tspan>
+<tspan x="10" y="826"> 46.  2017-04-21 11:36:47 +0000      737 bytes  src/standalone/builders/strictMode/umd.js</tspan>
+<tspan x="10" y="842"> 47.  2017-04-21 11:36:47 +0000      474 bytes  src/standalone/builders/strictMode/utils/gatherI\</tspan>
+<tspan x="10" y="858">mports.js</tspan>
+<tspan x="10" y="874"> 48.  2017-04-21 11:36:47 +0000      290 bytes  src/standalone/builders/strictMode/utils/getExpo\</tspan>
+<tspan x="10" y="890">rtNames.js</tspan>
+<tspan x="10" y="906"> 49.  2017-04-21 11:36:47 +0000      577 bytes  src/standalone/builders/strictMode/utils/getImpo\</tspan>
+<tspan x="10" y="922">rtSummary.js</tspan>
+<tspan x="10" y="938"> 50.  2017-04-21 11:36:47 +0000     3389 bytes  src/standalone/builders/strictMode/utils/transfo\</tspan>
+<tspan x="10" y="954">rmBody.js</tspan>
+<tspan x="10" y="970"> 51.  2017-04-21 11:36:47 +0000     3212 bytes  src/standalone/getModule.js</tspan>
+<tspan x="10" y="986"> 52.  2017-04-21 11:36:47 +0000      405 bytes  src/utils/EsperantoError.js</tspan>
+<tspan x="10" y="1002"> 53.  2017-04-21 11:36:47 +0000      579 bytes  src/utils/amd/amdIntro.js</tspan>
+<tspan x="10" y="1018"> 54.  2017-04-21 11:36:47 +0000      882 bytes  src/utils/amd/getImportSummary.js</tspan>
+<tspan x="10" y="1034"> 55.  2017-04-21 11:36:47 +0000      154 bytes  src/utils/amd/processIds.js</tspan>
+<tspan x="10" y="1050"> 56.  2017-04-21 11:36:47 +0000      127 bytes  src/utils/amd/processName.js</tspan>
+<tspan x="10" y="1066"> 57.  2017-04-21 11:36:47 +0000     4082 bytes  src/utils/ast/annotate.js</tspan>
+<tspan x="10" y="1082"> 58.  2017-04-21 11:36:47 +0000      972 bytes  src/utils/ast/disallowIllegalReassignment.js</tspan>
+<tspan x="10" y="1098"> 59.  2017-04-21 11:36:47 +0000     6221 bytes  src/utils/ast/findImportsAndExports.js</tspan>
+<tspan x="10" y="1114"> 60.  2017-04-21 11:36:47 +0000      983 bytes  src/utils/ast/getUnscopedNames.js</tspan>
+<tspan x="10" y="1130"> 61.  2017-04-21 11:36:47 +0000      541 bytes  src/utils/ast/replaceIdentifiers.js</tspan>
+<tspan x="10" y="1146"> 62.  2017-04-21 11:36:47 +0000     1222 bytes  src/utils/ast/rewriteExportAssignments.js</tspan>
+<tspan x="10" y="1162"> 63.  2017-04-21 11:36:47 +0000     2506 bytes  src/utils/ast/traverse.js</tspan>
+<tspan x="10" y="1178"> 64.  2017-04-21 11:36:47 +0000     1100 bytes  src/utils/ast/walk.js</tspan>
+<tspan x="10" y="1194"> 65.  2017-04-21 11:36:47 +0000      740 bytes  src/utils/builtins.js</tspan>
+<tspan x="10" y="1210"> 66.  2017-04-21 11:36:47 +0000      520 bytes  src/utils/disallowConflictingImports.js</tspan>
+<tspan x="10" y="1226"> 67.  2017-04-21 11:36:47 +0000      752 bytes  src/utils/getReadOnlyIdentifiers.js</tspan>
+<tspan x="10" y="1242"> 68.  2017-04-21 11:36:47 +0000      159 bytes  src/utils/hasNamedExports.js</tspan>
+<tspan x="10" y="1258"> 69.  2017-04-21 11:36:47 +0000      156 bytes  src/utils/hasNamedImports.js</tspan>
+<tspan x="10" y="1274"> 70.  2017-04-21 11:36:47 +0000       76 bytes  src/utils/hasOwnProp.js</tspan>
+<tspan x="10" y="1290"> 71.  2017-04-21 11:36:47 +0000      418 bytes  src/utils/mappers.js</tspan>
+<tspan x="10" y="1306"> 72.  2017-04-21 11:36:47 +0000     2648 bytes  src/utils/packageResult.js</tspan>
+<tspan x="10" y="1322"> 73.  2017-04-21 11:36:47 +0000      426 bytes  src/utils/promiseSequence.js</tspan>
+<tspan x="10" y="1338"> 74.  2017-04-21 11:36:47 +0000     1061 bytes  src/utils/resolveId.js</tspan>
+<tspan x="10" y="1354"> 75.  2017-04-21 11:36:47 +0000      784 bytes  src/utils/sanitize.js</tspan>
+<tspan x="10" y="1370"> 76.  2017-04-21 11:36:47 +0000      241 bytes  src/utils/umd/requireName.js</tspan>
+<tspan x="10" y="1386"> 77.  2017-04-21 11:36:47 +0000     2323 bytes  src/utils/umd/umdIntro.js</tspan>
+</text>
+</svg>
